@@ -36,7 +36,8 @@ map<int, Question> loadQuestionsFromFile(const string& filename) {
                 int optionId;
                 string optionText;
                 optionStream >> optionId;
-                getline(optionStream, optionText, ':');
+                optionStream.ignore(1, ':');
+                getline(optionStream, optionText);
                 currentQuestion.answers[optionId] = optionText;
             }
         }

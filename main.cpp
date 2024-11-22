@@ -3,17 +3,30 @@
 #include <sstream>
 #include <map>
 #include <string>
+#include <list>
 using namespace std;
 
 struct Question {
+    int id;
     string question;
     int answer;
     map<int, string> answers;
 };
 
+void removeQuestion(list<Question>& questions, int idToRemove) {
+    for (auto it = questions.begin(); it != questions.end(); ++it) {
+        if (it->id == idToRemove) {
+            questions.erase(it);
+            cout << "Question with ID " << idToRemove << " removed successfully.\n";
+            return;
+        }
+    }
+    cout << "Question with ID " << idToRemove << " not found.\n";
+}
+
 //populate map with questions from file
-map<int, Question> loadQuestionsFromFile(const string& filename) {
-    map<int, Question> questions;
+list<Question> loadQuestionsFromFile(const string& filename) {
+    list<Question> questions;
     ifstream file(filename);
     string line;
     int currentId = 0;
@@ -22,10 +35,11 @@ map<int, Question> loadQuestionsFromFile(const string& filename) {
     while (getline(file, line)) {
         if (line.rfind("QID:", 0) == 0) {
             if (currentId != 0) {
-                questions[currentId] = currentQuestion;
-                currentQuestion = Question();
+                questions.push_back(currentQuestion);
+                currentQuestion = Question(); 
             }
             currentId = stoi(line.substr(5));
+            currentQuestion.id = currentId;
         } else if (line.rfind("Question:", 0) == 0) {
             currentQuestion.question = line.substr(10);
         } else if (line.rfind("Answer:", 0) == 0) {
@@ -43,23 +57,34 @@ map<int, Question> loadQuestionsFromFile(const string& filename) {
         }
     }
     if (currentId != 0) {
-        questions[currentId] = currentQuestion;
+        questions.push_back(currentQuestion);
     }
     return questions;
 }
 
-int main() {
-    map<int, Question> questions = loadQuestionsFromFile("questions.txt");
-
+void printQuestions(list<Question> questions){
     //print ques
-    for (const auto& [id, question] : questions) {
-        cout << "QID: " << id << "\nQuestion: " << question.question
-                  << "\nAnswer: " << question.answer << "\nOptions:\n";
+    for (const auto& question : questions) {
+        cout << "QID: " << question.id << "\nQuestion: " << question.question
+             << "\nAnswer: " << question.answer << "\nOptions:\n";
         for (const auto& [optionId, answerText] : question.answers) {
             cout << "  " << optionId << ": " << answerText << "\n";
         }
         cout << endl;
     }
+}
+
+int main() {
+    list<Question> questions = loadQuestionsFromFile("questions.txt");
+
+    printQuestions(questions);
+
+    int idToRemove;
+    cout << "Enter the ID of the question to remove: ";
+    cin >> idToRemove;
+    removeQuestion(questions, idToRemove);
+
+    printQuestions(questions);
 
     return 0;
 }

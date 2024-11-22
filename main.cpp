@@ -4,6 +4,8 @@
 #include <map>
 #include <string>
 #include <list>
+#include <random>
+#include <iterator>
 using namespace std;
 
 struct Question {
@@ -12,6 +14,26 @@ struct Question {
     int answer;
     map<int, string> answers;
 };
+
+
+Question getRandomQuestion(const list<Question>& questions) {
+    if (questions.empty()) {
+        throw runtime_error("No questions available to select.");
+    }
+
+    //gen random num
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, questions.size() - 1);
+
+    int randomIndex = dist(gen);
+
+    //go to random num index and return question
+    auto it = questions.begin();
+    advance(it, randomIndex);
+
+    return *it;
+}
 
 void removeQuestion(list<Question>& questions, int idToRemove) {
     for (auto it = questions.begin(); it != questions.end(); ++it) {
@@ -79,10 +101,17 @@ int main() {
 
     printQuestions(questions);
 
-    int idToRemove;
+    /*int idToRemove;
     cout << "Enter the ID of the question to remove: ";
-    cin >> idToRemove;
-    removeQuestion(questions, idToRemove);
+    cin >> idToRemove;*/
+
+    //demo of the program selecting a random question and then eliminating it
+    Question randomQuestion = getRandomQuestion(questions);
+
+
+    cout << "Question randomly selected that will be eliminated: " << randomQuestion.id << "\n";
+
+    removeQuestion(questions, randomQuestion.id);
 
     printQuestions(questions);
 

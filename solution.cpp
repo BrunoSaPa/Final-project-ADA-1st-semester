@@ -285,7 +285,7 @@ int main (){
     player.bonusUsed = false;
     //Setting up the variables of the game
     string prices[14] ={"0200","0400","0600","0800","1000","1300","1600","1900","2100","2400","2800","3200","3600","4000"};
-    int levelPrice=13;
+    int levelPrice=1;
     char answer = 'I';
     int reward = 0;
     //load questions
@@ -340,7 +340,6 @@ int main (){
                             }
 
                         }
-                        system("pause");
 
                         player.halfAnswers=false;
                         player.bonusUsed = true;
@@ -413,7 +412,7 @@ int main (){
 
                     if (answer==49){
                         reward = (((levelPrice/5)>0)?1000:0);
-                        reward = (((levelPrice/10)>0)?2400:0);
+                        reward = (((levelPrice/10)>0)?2400:reward);
                         break;
                     }
                     else{

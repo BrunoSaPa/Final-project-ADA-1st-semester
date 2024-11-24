@@ -28,6 +28,38 @@ struct Player {
     bool bonusUsed;
 };
 
+//Variables shared between threads
+atomic<bool> timeExpired(false);
+atomic<bool> alreadyAnswered(false);
+atomic<bool> adittionalTime(false);
+
+void timerFunction(int durationSeconds) {
+    timeExpired = false;
+    int iteration;
+
+    for (iteration = 1; iteration <durationSeconds; iteration++){
+        this_thread::sleep_for(chrono::seconds(1));
+        //Finish the loop so we dont wait the whole time to continue with the program
+        if (alreadyAnswered){
+            break;
+        }
+        //In case adittional time bonus is used duplicate the time
+        if (adittionalTime){
+            adittionalTime=false;
+            durationSeconds*=2;
+        }
+        //Save the cursor position before update the timer and then restore the cursor position
+        cout<<"\033[s" << "\033[24;70H" << "Time "<< iteration << "/" << durationSeconds << "\033[u";
+    }
+
+    if (iteration>=durationSeconds){
+        timeExpired = true;
+    }
+    else{
+        timeExpired = false;
+    }
+}
+
 Question getRandomQuestion(const list<Question>& questions) {
     if (questions.empty()) {
         throw runtime_error("No questions available to select.");
@@ -283,11 +315,13 @@ int main (){
     player.halfAnswers = true;      //A
     player.changeQuestion = true;   //C
     player.bonusUsed = false;
+    
     //Setting up the variables of the game
     string prices[14] ={"0200","0400","0600","0800","1000","1300","1600","1900","2100","2400","2800","3200","3600","4000"};
     int levelPrice=1;
     char answer = 'I';
     int reward = 0;
+    
     //load questions
     list<Question> listQuestions = loadQuestionsFromFile("./questions.txt");
 
@@ -305,15 +339,18 @@ int main (){
         {
             chooseQuestion:
             Question randomQuestion = getRandomQuestion(listQuestions);
+            alreadyAnswered=false;
+            thread timerThread(timerFunction, 30);
             
             reloadConsole:
             updateConsole(prices,levelPrice,randomQuestion,'Q', player);
             player.bonusUsed=false;
             
             returnToQuestion:
-            do{
-                // restart of cursor and clean of the other answer
-                cout << "\033[24;18H" << "\033[K" <<"\033[24;90H|"<< "\033[24;18H";       
+            // restart of cursor and clean of the other answer
+            cout << "\033[24;18H" << "\033[K" <<"\033[24;90H|"<< "\033[24;18H";  
+            
+            do{     
                 
                 //the timer should be put here
                 cin >> answer;
@@ -334,7 +371,7 @@ int main (){
 
                             int randomIndex = dist(gen);
 
-                            if(randomIndex!=randomQuestion.answer){
+                            if((randomIndex!=randomQuestion.answer)&&(randomIndex<5)){
                                 randomQuestion.answers[randomIndex] = " ";
                                 count++;
                             }
@@ -354,8 +391,7 @@ int main (){
                 case 'B':
                     if(player.aditionalTime){
                         
-                        //some code that is related to the increment of time in the timer
-
+                        adittionalTime = true;
                         player.aditionalTime=false;
                         player.bonusUsed=true;
                         goto reloadConsole;
@@ -369,7 +405,14 @@ int main (){
                         cout<< "\033[23;18HChanging question...\033[24;18H";
                         removeQuestion(listQuestions, randomQuestion.id);
                         player.changeQuestion=false;
-                        system("pause");
+                        alreadyAnswered = true;
+
+                        //wait for thread to finish
+                        if (timerThread.joinable()) {
+                            cout << "\033[24;18H"<<"Esperando a que se acabe el tiempo...";
+                            timerThread.join();
+                        } 
+
                         goto chooseQuestion;
                     }
                     else{
@@ -378,6 +421,14 @@ int main (){
 
                     break;
             }
+            //Quiting the bonuses from a false positive to finish the timer
+            alreadyAnswered = true;
+            
+            //wait for thread to finish
+            if (timerThread.joinable()) {
+                cout << "\033[24;18H"<<"Esperando a que se acabe el tiempo...";
+                timerThread.join();
+            } 
             
             //verify if the answer is correct
             if ((answer-48) == randomQuestion.answer){

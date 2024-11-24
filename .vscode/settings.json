@@ -2,6 +2,7 @@
     "files.associations": {
         "*.embeddedhtml": "html",
         "map": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "atomic": "cpp"
     }
 }

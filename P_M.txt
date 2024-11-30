@@ -1,0 +1,224 @@
+﻿QID: 1
+Question: Quien pinto el mural "La ciudad de los palacios"?
+Answer: 3
+Options:
+1: Salvador Dali
+2: Francisco de Goya
+3: Diego Rivera
+4: David Siqueiros
+
+QID: 2
+Question: En que pais nacio el escritor Gabriel Garcia Marquez?
+Answer: 2
+Options:
+1: Mexico
+2: Colombia
+3: Argentina
+4: Peru
+
+QID: 3
+Question: Cual es el rio mas largo de America del Sur?
+Answer: 2
+Options:
+1: Rio Parana
+2: Rio Amazonas
+3: Rio Orinoco
+4: Rio de la Plata
+
+QID: 4
+Question: Que cientifico formulo la teoria de la relatividad?
+Answer: 2
+Options:
+1: Isaac Newton
+2: Albert Einstein
+3: Galileo Galilei
+4: Nikola Tesla
+
+QID: 5
+Question: Quien fue el lider del ejercito frances durante la Revolucion Francesa?
+Answer: 1
+Options:
+1: Napoleon Bonaparte
+2: Luis XVI
+3: Maximilien Robespierre
+4: Jean-Paul Marat
+
+QID: 6
+Question: Que pais se independizo de Reino Unido el 15 de agosto de 1947?
+Answer: 2
+Options:
+1: Pakistan
+2: India
+3: Irlanda
+4: Estados Unidos
+
+QID: 7
+Question: En que ano ocurrio la Revolucion Mexicana?
+Answer: 2
+Options:
+1: 1910
+2: 1910
+3: 1900
+4: 1920
+
+QID: 8
+Question: Quien fue el primer presidente de los Estados Unidos?
+Answer: 3
+Options:
+1: Abraham Lincoln
+2: Thomas Jefferson
+3: George Washington
+4: John Adams
+
+QID: 9
+Question: Que nombre recibe la teoria de la evolucion de las especies?
+Answer: 2
+Options:
+1: Teoria de la creacion
+2: Teoria de la evolucion
+3: Teoria del Big Bang
+4: Teoria de la seleccion natural
+
+QID: 10
+Question: Cual es la capital de Japon?
+Answer: 3
+Options:
+1: Osaka
+2: Kyoto
+3: Tokio
+4: Hiroshima
+
+QID: 11
+Question: En que continente se encuentra el desierto del Sahara?
+Answer: 2
+Options:
+1: Asia
+2: Africa
+3: America
+4: Oceania
+
+QID: 12
+Question: Cual es el autor de la obra "Cien anos de soledad"?
+Answer: 3
+Options:
+1: Mario Vargas Llosa
+2: Julio Cortazar
+3: Gabriel Garcia Marquez
+4: Juan Rulfo
+
+QID: 13
+Question: En que pais se origino la civilizacion maya?
+Answer: 2
+Options:
+1: Peru
+2: Mexico
+3: Guatemala
+4: Honduras
+
+QID: 14
+Question: Quien fue el ultimo zar de Rusia?
+Answer: 1
+Options:
+1: Nicolas II
+2: Ivan IV
+3: Pedro el Grande
+4: Alejandro II
+
+QID: 15
+Question: Que elemento quimico tiene el simbolo Na?
+Answer: 2
+Options:
+1: Plata
+2: Sodio
+3: Nitrogeno
+4: Neon
+
+QID: 16
+Question: Quien fue el creador de la teoria heliocentrica?
+Answer: 2
+Options:
+1: Isaac Newton
+2: Nicolas Copernico
+3: Galileo Galilei
+4: Johannes Kepler
+
+QID: 17
+Question: En que ano llego Cristobal Colon a America?
+Answer: 1
+Options:
+1: 1492
+2: 1500
+3: 1485
+4: 1510
+
+QID: 18
+Question: Cual es la lengua oficial de Argentina?
+Answer: 3
+Options:
+1: Portugues
+2: Ingles
+3: Espanol
+4: Italiano
+
+QID: 19
+Question: Que filosofo escribio "El principe"?
+Answer: 1
+Options:
+1: Nicolas Maquiavelo
+2: Platon
+3: Aristoteles
+4: Rene Descartes
+
+QID: 20
+Question: Que guerra ocurrio entre 1914 y 1918?
+Answer: 2
+Options:
+1: Guerra de Vietnam
+2: Primera Guerra Mundial
+3: Guerra de Secesion
+4: Guerra Fria
+
+QID: 21
+Question: Cual es la ciudad mas poblada del mundo?
+Answer: 1
+Options:
+1: Tokio
+2: Nueva York
+3: Shanghai
+4: Ciudad de Mexico
+
+QID: 22
+Question: Quien es el autor de "La Odisea"?
+Answer: 4
+Options:
+1: Socrates
+2: Aristoteles
+3: Platon
+4: Homero
+
+QID: 23
+Question: Que pais tiene la mayor poblacion del mundo?
+Answer: 2
+Options:
+1: Estados Unidos
+2: China
+3: India
+4: Rusia
+
+QID: 24
+Question: Cual es la capital de Canada?
+Answer: 2
+Options:
+1: Toronto
+2: Ottawa
+3: Vancouver
+4: Montreal
+
+QID: 25
+Question: En que continente se encuentra la selva del Amazonas?
+Answer: 1
+Options:
+1: America del Sur
+2: Asia
+3: Africa
+4: America del Norte

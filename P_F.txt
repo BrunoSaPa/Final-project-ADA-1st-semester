@@ -1,0 +1,224 @@
+﻿QID: 1
+Question: ¿Cual es la capital de Francia?
+Answer: 2
+Options:
+1: Berlin
+2: Paris
+3: Madrid
+4: Roma
+
+QID: 2
+Question: ¿Cuantos continentes hay en el mundo?
+Answer: 2
+Options:
+1: 6
+2: 7
+3: 5
+4: 8
+
+QID: 3
+Question: ¿Quien escribio "Don Quijote de la Mancha"?
+Answer: 3
+Options:
+1: Gabriel Garcia Marquez
+2: Mario Vargas Llosa
+3: Miguel de Cervantes
+4: Julio Cortazar
+
+QID: 4
+Question: ¿En que continente se encuentra Egipto?
+Answer: 1
+Options:
+1: Africa
+2: Asia
+3: Europa
+4: America
+
+QID: 5
+Question: ¿Cual es el animal mas grande del mundo?
+Answer: 3
+Options:
+1: Elefante
+2: Jirafa
+3: Ballena Azul
+4: Hipopotamo
+
+QID: 6
+Question: ¿Que planeta es conocido como el "planeta rojo"?
+Answer: 2
+Options:
+1: Venus
+2: Marte
+3: Saturno
+4: Jupiter
+
+QID: 7
+Question: ¿Cual es el color del sol en el cielo?
+Answer: 1
+Options:
+1: Amarillo
+2: Azul
+3: Rojo
+4: Blanco
+
+QID: 8
+Question: ¿Cual es el idioma oficial de Brasil?
+Answer: 2
+Options:
+1: Espanol
+2: Portugues
+3: Ingles
+4: Italiano
+
+QID: 9
+Question: ¿Que pais tiene forma de bota?
+Answer: 3
+Options:
+1: Francia
+2: Alemania
+3: Italia
+4: Espana
+
+QID: 10
+Question: ¿Quien pinto la Mona Lisa?
+Answer: 2
+Options:
+1: Pablo Picasso
+2: Leonardo da Vinci
+3: Salvador Dali
+4: Vincent van Gogh
+
+QID: 11
+Question: ¿Cuantos meses tiene un ano?
+Answer: 1
+Options:
+1: 12
+2: 11
+3: 10
+4: 14
+
+QID: 12
+Question: ¿En que pais se origino el sushi?
+Answer: 2
+Options:
+1: China
+2: Japon
+3: Corea
+4: Tailandia
+
+QID: 13
+Question: ¿Cual es la capital de Estados Unidos?
+Answer: 2
+Options:
+1: Nueva York
+2: Washington D.C.
+3: Los Angeles
+4: Chicago
+
+QID: 14
+Question: ¿En que continente se encuentra Japon?
+Answer: 2
+Options:
+1: Europa
+2: Asia
+3: Africa
+4: America
+
+QID: 15
+Question: ¿Cual es el oceano mas grande del mundo?
+Answer: 2
+Options:
+1: Atlantico
+2: Pacifico
+3: Indico
+4: Artico
+
+QID: 16
+Question: ¿Que tipo de animal es la tortuga?
+Answer: 2
+Options:
+1: Mamifero
+2: Reptil
+3: Ave
+4: Anfibio
+
+QID: 17
+Question: ¿Que instrumento musical tiene teclas y cuerdas?
+Answer: 3
+Options:
+1: Guitarra
+2: Flauta
+3: Piano
+4: Trompeta
+
+QID: 18
+Question: ¿Quien fue el primer hombre en llegar a la Luna?
+Answer: 2
+Options:
+1: Alan Shepard
+2: Neil Armstrong
+3: Buzz Aldrin
+4: Yuri Gagarin
+
+QID: 19
+Question: ¿Que fruta es amarilla y se pela facilmente?
+Answer: 2
+Options:
+1: Naranja
+2: Platano
+3: Manzana
+4: Fresa
+
+QID: 20
+Question: ¿Que significa "PC"?
+Answer: 2
+Options:
+1: Camara Personal
+2: Computadora Personal
+3: Computadora Publica
+4: Celular Personal
+
+QID: 21
+Question: ¿Cual es el animal mas rapido del mundo?
+Answer: 2
+Options:
+1: Leon
+2: Guepardo
+3: Aguila
+4: Delfin
+
+QID: 22
+Question: ¿Que instrumento se usa para medir la temperatura?
+Answer: 2
+Options:
+1: Regla
+2: Termometro
+3: Barometro
+4: Telescopio
+
+QID: 23
+Question: ¿Que instrumento musical se toca con un arco?
+Answer: 2
+Options:
+1: Guitarra
+2: Violin
+3: Piano
+4: Flauta
+
+QID: 24
+Question: ¿Cual es el pais mas grande del mundo?
+Answer: 1
+Options:
+1: Rusia
+2: China
+3: Estados Unidos
+4: Canada
+
+QID: 25
+Question: ¿Que insecto produce miel?
+Answer: 2
+Options:
+1: Mosca
+2: Abeja
+3: Mosquito
+4: Escarabajo

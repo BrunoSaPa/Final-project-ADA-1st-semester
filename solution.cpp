@@ -49,7 +49,11 @@ void timerFunction(int durationSeconds) {
             durationSeconds*=2;
         }
         //Save the cursor position before update the timer and then restore the cursor position
-        cout<<"\033[s" << "\033[24;70H" << "Time "<< iteration << "/" << durationSeconds << "\033[u";
+        if(iteration>15){
+            
+            cout<<"\033[s" << "\033[24;70H" << "Time "<< iteration << "/" << durationSeconds << "\033[u";
+
+        }
     }
 
     if (iteration>=durationSeconds){
@@ -126,8 +130,21 @@ list<Question> loadQuestionsFromFile(const string& filename) {
     return questions;
 }
 
+//select group of questions 
+list<Question>& selectGroupOfQuestions (list<Question>&Easy, list<Question>&Medium, list<Question>&Hard, int level){
+    if ((level/5) == 2){
+        return Hard;
+    }
+    else if ((level/5) == 1){
+        return Medium;
+    }
+    else{
+        return Easy;
+    }
+}
+
 //update console with the respective state of the game
-void updateConsole(string prices[14], int levelPrice, Question question, char State, Player player){
+void updateConsole(string prices[15], int levelPrice, Question question, char State, Player player){
 
     //Clean other things that where on console.
     system("cls");
@@ -139,10 +156,10 @@ void updateConsole(string prices[14], int levelPrice, Question question, char St
     //Header
     cout << "\n" << windowDivisor;
 
-    for(int layer = 22; layer >=20; layer--){
+    for(int layer = 23; layer >=21; layer--){ 
         string header (88,' ');
 
-        if (layer==22){
+        if (layer==23){
             int position = 27;
 
             for (char character: "¿Quien quiere ser millonario?"){
@@ -154,26 +171,26 @@ void updateConsole(string prices[14], int levelPrice, Question question, char St
 
             cout << "\n|" << header << " |";
         }
-        if (layer==20){
+        if (layer==21){
             string header (16, ' ');
             cout << "\n|" << header << ((player.halfAnswers)?"\033[35;1m":"\033[2m") << "A.Half answers    " <<"\033[0m"<<((player.aditionalTime)?"\033[35;1m":"\033[2m") << "B.Additional time   "<<"\033[0m" << ((player.changeQuestion)?"\033[35;1m":"\033[2m") << "C.Change question" << header << "\033[0m |";
         }
-        if (layer==21){
+        if (layer==22){
 
             cout << "\n|" << header << "|";
         }
     }
 
     //Interactive part of the console
-    for (int layer = 19; layer>=0; layer--){
+    for (int layer = 20; layer>=0; layer--){
         
         //Print the divisions
-        if (layer==19 || layer==4 || layer == 0){
+        if (layer==20 || layer==4 || layer == 0){
             
             cout << "\n"<< windowDivisor;
         
         }
-        else if (layer>4 && layer <19){
+        else if (layer>4 && layer <20){ 
             //Restart of variables
             string firstSection (79,' ');
             string secondSection (8,' ');
@@ -270,7 +287,7 @@ void updateConsole(string prices[14], int levelPrice, Question question, char St
         
     }
 
-    cout << "\033[24;18H";        
+    cout << "\033[25;18H";      
     
 
 }
@@ -290,7 +307,7 @@ Question changeMessage(char state, int levelPrice, string prices[14]){
             break;
         case 'W':
             message.question = "Correcto, puedes seguir avanzando.";
-            message.answers.insert({1, "El premio que llevas es de " + (prices[levelPrice-1])+" y a cabas de pasar la ronda " + char((levelPrice+48))});
+            message.answers.insert({1, "El premio que llevas es de " + (prices[levelPrice-1])+" y a cabas de pasar la ronda " + to_string(levelPrice)});
             break;
         case 'L':
             message.question = "Lo siento tu respuesta ha sido incorrecta, ya no puedes continuar.";
@@ -316,14 +333,16 @@ int main (){
     player.changeQuestion = true;   //C
     player.bonusUsed = false;
     
-    //Setting up the variables of the game
-    string prices[14] ={"0200","0400","0600","0800","1000","1300","1600","1900","2100","2400","2800","3200","3600","4000"};
+    //Setting up the variables of the game    
+    string prices[15] ={"0200","0400","0600","0800","1000","1300","1600","1900","2100","2400","2800","3200","3600","4000","4400"};
     int levelPrice=1;
     char answer = 'I';
     int reward = 0;
     
     //load questions
-    list<Question> listQuestions = loadQuestionsFromFile("./questions.txt");
+    list<Question> listQuestionsEasy = loadQuestionsFromFile("./P_F.txt");
+    list<Question> listQuestionsMedium = loadQuestionsFromFile("./P_M.txt");
+    list<Question> listQuestionsHard = loadQuestionsFromFile("./P_D.txt");
 
     //game starts
     do{
@@ -338,6 +357,7 @@ int main (){
         while (1==1)
         {
             chooseQuestion:
+            list<Question> listQuestions= selectGroupOfQuestions(listQuestionsEasy,listQuestionsMedium,listQuestionsHard,levelPrice);
             Question randomQuestion = getRandomQuestion(listQuestions);
             alreadyAnswered=false;
             thread timerThread(timerFunction, 30);
@@ -348,7 +368,7 @@ int main (){
             
             returnToQuestion:
             // restart of cursor and clean of the other answer
-            cout << "\033[24;18H" << "\033[K" <<"\033[24;90H|"<< "\033[24;18H";  
+            cout << "\033[25;18H" << "\033[K" <<"\033[25;90H|"<< "\033[25;18H";  
             
             do{     
                 
@@ -402,14 +422,14 @@ int main (){
                     break;
                 case 'C':
                     if(player.changeQuestion){
-                        cout<< "\033[23;18HChanging question...\033[24;18H";
+                        cout<< "\033[24;18HChanging question...\033[25;18H";
                         removeQuestion(listQuestions, randomQuestion.id);
                         player.changeQuestion=false;
                         alreadyAnswered = true;
 
                         //wait for thread to finish
                         if (timerThread.joinable()) {
-                            cout << "\033[24;18H"<<"Esperando a que se acabe el tiempo...";
+                            cout << "\033[25;18H"<<"Esperando a que se acabe el tiempo...";
                             timerThread.join();
                         } 
 
@@ -426,7 +446,7 @@ int main (){
             
             //wait for thread to finish
             if (timerThread.joinable()) {
-                cout << "\033[24;18H"<<"Esperando a que se acabe el tiempo...";
+                cout << "\033[25;18H"<<"Esperando a que se acabe el tiempo...";
                 timerThread.join();
             } 
             
@@ -447,7 +467,7 @@ int main (){
                 do{
                     updateConsole(prices,levelPrice,changeMessage('C',levelPrice,prices),'C',player);
                     // restart of cursor and clean of the other answer
-                    cout << "\033[24;18H" << "\033[K" <<"\033[24;90H|"<< "\033[24;18H";  
+                    cout << "\033[25;18H" << "\033[K" <<"\033[25;90H|"<< "\033[25;18H";  
                     //wait for the response of the player
                     cin >> answer;
                 } while (!((answer==49)||(answer==50)));
@@ -456,14 +476,12 @@ int main (){
                     do{
                             updateConsole(prices,levelPrice,changeMessage('A',levelPrice,prices),'A',player);
                             // restart of cursor and clean of the other answer
-                            cout << "\033[24;18H" << "\033[K" <<"\033[24;90H|"<< "\033[24;18H";  
+                            cout << "\033[25;18H" << "\033[K" <<"\033[25;90H|"<< "\033[25;18H";  
                             //wait for the response of the player
                             cin >> answer;
                     } while (!((answer==49)||(answer==50)));
 
                     if (answer==49){
-                        reward = (((levelPrice/5)>0)?1000:0);
-                        reward = (((levelPrice/10)>0)?2400:reward);
                         break;
                     }
                     else{
@@ -485,6 +503,9 @@ int main (){
         }
         
     }
+    
+    reward = (((levelPrice/5)>0)?1000:0);
+    reward = (((levelPrice/10)>0)?2400:reward);
 
     system("cls");
     cout << "Gracias por jugar.\n\n\n\t"<< "El premio que te has llevado ha sido de "<< reward <<".\n\nEl juego ya termino\n";

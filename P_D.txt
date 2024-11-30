@@ -1,0 +1,224 @@
+﻿QID: 1
+Question: Quien escribio "La Divina Comedia"?
+Answer: 1
+Options:
+1: Dante Alighieri
+2: Johann Wolfgang von Goethe
+3: William Shakespeare
+4: Homero
+
+QID: 2
+Question: En que pais se encuentran las famosas ruinas de Petra?
+Answer: 3
+Options:
+1: Egipto
+2: Grecia
+3: Jordania
+4: Turquia
+
+QID: 3
+Question: Que matematico griego formulo el teorema sobre los triangulos rectangulos?
+Answer: 2
+Options:
+1: Euclides
+2: Pitagoras
+3: Arquimedes
+4: Tales de Mileto
+
+QID: 4
+Question: Cual es el nombre completo del pintor conocido como El Greco?
+Answer: 1
+Options:
+1: Domenikos Theotokopoulos
+2: Miguel de Cervantes
+3: Francisco de Goya
+4: Diego Velazquez
+
+QID: 5
+Question: Que pais tiene la mayor cantidad de islas en el mundo?
+Answer: 1
+Options:
+1: Suecia
+2: Canada
+3: Noruega
+4: Finlandia
+
+QID: 6
+Question: Quien fue el ultimo faraon de Egipto?
+Answer: 2
+Options:
+1: Ramses II
+2: Cleopatra
+3: Tutankamon
+4: Nefertiti
+
+QID: 7
+Question: Que imperio construyo la famosa Muralla China?
+Answer: 2
+Options:
+1: Imperio Japones
+2: Imperio Chino
+3: Imperio Mongol
+4: Imperio Persa
+
+QID: 8
+Question: Que filosofo es conocido por su frase "Pienso, luego existo"?
+Answer: 2
+Options:
+1: Platon
+2: Rene Descartes
+3: Aristoteles
+4: Friedrich Nietzsche
+
+QID: 9
+Question: En que ano comenzo la Revolucion Francesa?
+Answer: 1
+Options:
+1: 1789
+2: 1792
+3: 1799
+4: 1800
+
+QID: 10
+Question: Cual es el elemento quimico con simbolo Fe?
+Answer: 1
+Options:
+1: Hierro
+2: Cobre
+3: Plomo
+4: Zinc
+
+QID: 11
+Question: Que filosofo aleman es conocido por su teoria del "imperativo categorico"?
+Answer: 2
+Options:
+1: Friedrich Nietzsche
+2: Immanuel Kant
+3: Karl Marx
+4: Rene Descartes
+
+QID: 12
+Question: Quien fue el lider de la Revolucion Rusa de 1917?
+Answer: 2
+Options:
+1: Joseph Stalin
+2: Vladimir Lenin
+3: Leon Trotsky
+4: Nikita Kruschev
+
+QID: 13
+Question: Que imperio se fundo en 1206 por Gengis Kan?
+Answer: 2
+Options:
+1: Imperio Romano
+2: Imperio Mongol
+3: Imperio Otomano
+4: Imperio Persa
+
+QID: 14
+Question: Que pais tiene la ciudad de Petra, una de las siete maravillas del mundo moderno?
+Answer: 3
+Options:
+1: Egipto
+2: Grecia
+3: Jordania
+4: Turquia
+
+QID: 15
+Question: Cual es el nombre de la teoria cientifica que explica el origen del universo?
+Answer: 2
+Options:
+1: Teoria de la Relatividad
+2: Teoria del Big Bang
+3: Teoria de la Evolucion
+4: Teoria del Multiverso
+
+QID: 16
+Question: Quien pinto "La ultima cena"?
+Answer: 1
+Options:
+1: Leonardo da Vinci
+2: Miguel Angel
+3: Rafael
+4: Donatello
+
+QID: 17
+Question: En que ano se fundo la ciudad de Roma segun la leyenda?
+Answer: 1
+Options:
+1: 753 a.C.
+2: 500 a.C.
+3: 600 a.C.
+4: 400 a.C.
+
+QID: 18
+Question: Quien fue el lider de la independencia de la India?
+Answer: 2
+Options:
+1: Jawaharlal Nehru
+2: Mahatma Gandhi
+3: Subhas Chandra Bose
+4: Bhagat Singh
+
+QID: 19
+Question: Que filosofo griego fundo la escuela de pensamiento llamada el "Estoicismo"?
+Answer: 2
+Options:
+1: Aristoteles
+2: Zenon de Citio
+3: Platon
+4: Socrates
+
+QID: 20
+Question: Cual es la capital de Nepal, pais conocido por sus montanas?
+Answer: 3
+Options:
+1: Lhasa
+2: Katmandu
+3: Islamabad
+4: Nueva Delhi
+
+QID: 21
+Question: Que cientifico formulo la ley de la gravedad?
+Answer: 1
+Options:
+1: Isaac Newton
+2: Albert Einstein
+3: Galileo Galilei
+4: Johannes Kepler
+
+QID: 22
+Question: Que filosofo griego es conocido por haber sido tutor de Alejandro Magno?
+Answer: 3
+Options:
+1: Socrates
+2: Platon
+3: Aristoteles
+4: Pitagoras
+
+QID: 23
+Question: Que imperio se destaco por su cultura y arquitectura en la region andina de Sudamerica?
+Answer: 2
+Options:
+1: Imperio Azteca
+2: Imperio Inca
+3: Imperio Maya
+4: Imperio Guarani
+
+QID: 24
+Question: Que escritor ruso es conocido por sus obras "Crimen y castigo" y "Los hermanos Karamazov"?
+Answer: 3
+Options:
+1: Leon Tolstoi
+2: Anton Chejov
+3: Fiodor Dostoyevski
+4: Aleksandr Pushkin
+
+QID: 25
+Question: En que ano se lanzo la primera mision tripulada al espacio por parte de la URSS?
+Answer: 2
+Options:
+1: 1965
+2: 1961
+3: 1957
+4: 1970

@@ -265,7 +265,10 @@ void updateConsole(string prices[15], int levelPrice, Question question, char St
                         break;
                     case 'I':
                         outputInConsole = "El juego va a comenzar, ¿Deseas iniciar el juego?";
-
+                        break;
+                    case 'F':
+                        outputInConsole = "";
+                        break;
                 }
             }
             //For the state that only requires a yes or no.
@@ -293,7 +296,7 @@ void updateConsole(string prices[15], int levelPrice, Question question, char St
 }
 
 //change message of the first section of console
-Question changeMessage(char state, int levelPrice, string prices[14]){
+Question changeMessage(char state, int levelPrice, string prices[15]){
     Question message;
 
     switch (state){
@@ -316,6 +319,10 @@ Question changeMessage(char state, int levelPrice, string prices[14]){
         case 'I':
             message.question = "Bienvenido al juego.";
             message.answers.insert({1,""});
+            break;
+        case 'F':
+            message.question = "El juego ya acabo.";
+            message.answers.insert({1,((levelPrice==15)?"Has completado el juego con exito.":("El nivel en el que te quedaste fue: "+ to_string(levelPrice)))});
             break;
     }
 
@@ -453,8 +460,7 @@ int main (){
             //verify if the answer is correct
             if ((answer-48) == randomQuestion.answer){
                 //verify if the player already won
-                if(levelPrice==14){
-                    reward = 4000;
+                if(levelPrice==15){
                     break;
                 }
                 
@@ -506,8 +512,9 @@ int main (){
     
     reward = (((levelPrice/5)>0)?1000:0);
     reward = (((levelPrice/10)>0)?2400:reward);
+    reward = (((levelPrice/15)>0)?4400:reward);
 
-    system("cls");
-    cout << "Gracias por jugar.\n\n\n\t"<< "El premio que te has llevado ha sido de "<< reward <<".\n\nEl juego ya termino\n";
+    updateConsole(prices,levelPrice,changeMessage('F',levelPrice,prices),'F',player);
+    cout << "\033[24;18H"<<"Gracias por jugar.\n\t"<< "El premio que te has llevado ha sido de "<< reward <<".\033[28;18H";
     system("pause");
 }
